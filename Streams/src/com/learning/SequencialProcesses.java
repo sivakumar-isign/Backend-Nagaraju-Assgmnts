@@ -9,10 +9,10 @@ public class SequencialProcesses {
 	public static void main(String[] args) {
 
 		List<Integer> preOpe = IntStream.range(0, 1000000).boxed().collect(Collectors.toList());
-		long startTime = System.currentTimeMillis();
+		long startTime = System.nanoTime();
 		System.out.println(" StartTime :  " + startTime);
 		List<Integer> postOpe = preOpe.stream().map(e->e+e).sorted().filter(e->e%2==0).collect(Collectors.toList());
-		long endTime = System.currentTimeMillis();
+		long endTime = System.nanoTime();
 		System.out.println(" EndTime : " + endTime);
 		
 		System.out.println("Size of postOpe (sequential): " + postOpe.size()); 
